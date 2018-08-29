@@ -18,9 +18,6 @@ const HomeStack = createStackNavigator(
 	        backgroundColor: '#fff',
 	      },
 	      headerTintColor: '#000',
-	      headerTitleStyle: {
-	        fontWeight: 'bold',
-	      },
 	    },
 	}
 )
@@ -37,9 +34,6 @@ const ProfileStack = createStackNavigator(
 	        backgroundColor: '#fff',
 	      },
 	      headerTintColor: '#000',
-	      headerTitleStyle: {
-	        fontWeight: 'bold',
-	      },
 	    },
 	}
 )
@@ -56,9 +50,6 @@ const FavouriteStack = createStackNavigator(
 	        backgroundColor: '#fff',
 	      },
 	      headerTintColor: '#000',
-	      headerTitleStyle: {
-	        fontWeight: 'bold',
-	      },
 	    },
 	}
 )
@@ -89,6 +80,9 @@ const RootStack = createBottomTabNavigator(
       },
     }),
     tabBarOptions: {
+      style: {
+	    backgroundColor: '#fff',
+	  },
       showLabel : false,
       activeTintColor: '#000',
       inactiveTintColor: '#000'
