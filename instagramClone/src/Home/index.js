@@ -1,14 +1,31 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, View, FlatList} from 'react-native';
+import {
+  Platform, 
+  StyleSheet, 
+  View, 
+  FlatList
+} from 'react-native';
 import {
   Container,
   Text,
-  List
+  List,
+  Spinner,
+  Content
 } from "native-base"
-import {connect} from "react-redux"
+import {
+  connect
+} from "react-redux"
+import {
+  HeaderLeft, 
+  HeaderTitle, 
+  HeaderRight
+} from "./component/header-title.js"
+import {
+  getFeed
+} from "../store/actions/feed.js"
 
-import {HeaderLeft, HeaderTitle, HeaderRight} from "./component/header-title.js"
-import {getFeed} from "../store/actions/feed.js"
+import FeedList from "./component/feed-list.js"
+
 class Home extends Component{
   static navigationOptions = {
   	headerLeft : <HeaderLeft />,
@@ -26,9 +43,25 @@ class Home extends Component{
 
 
   render() {
+    const {feedList, loading} = this.props.feed;
+
+    let isAnyFeed = null
+
+    if(loading){
+       isAnyFeed = <Spinner color="#000"/>
+    }
+
     return (
       <Container>
-       
+       <View>
+          {isAnyFeed}
+
+          <FlatList
+            data={feedList}
+            renderItem={({item}) => <FeedList item={item}/>}
+            keyExtractor={(item, index) => item.id.toString()}
+          />
+       </View>
       </Container>
     );
   }
