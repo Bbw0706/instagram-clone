@@ -86,7 +86,7 @@ export default class FeedList extends Component {
           </Form>
         </View>
 
-        <View style={{marginTop : 20, left:12}}>
+        <View style={{marginTop : 10, left:12}}>
           <Text style={{fontSize:12,  color:"#aaa"}}>30 August 2018</Text>
         </View>
       </View>

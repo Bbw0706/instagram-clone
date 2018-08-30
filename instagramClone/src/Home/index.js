@@ -5,6 +5,7 @@ import {
   View, 
   FlatList
 } from 'react-native';
+
 import {
   Container,
   Text,
@@ -12,14 +13,17 @@ import {
   Spinner,
   Content
 } from "native-base"
+
 import {
   connect
 } from "react-redux"
+
 import {
   HeaderLeft, 
   HeaderTitle, 
   HeaderRight
 } from "./component/header-title.js"
+
 import {
   getFeed
 } from "../store/actions/feed.js"
@@ -27,10 +31,12 @@ import {
 import FeedList from "./component/feed-list.js"
 
 class Home extends Component{
-  static navigationOptions = {
-  	headerLeft : <HeaderLeft />,
-    headerTitle: <HeaderTitle />,
-    headerRight : <HeaderRight />,
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerLeft : <HeaderLeft />,
+      headerTitle: <HeaderTitle />,
+      headerRight : <HeaderRight navigation={navigation}/>,
+    };
   };
 
   getFeed = () => {

@@ -21,8 +21,11 @@ const HeaderTitle = () => (
 	</Text>
 )
 
-const HeaderRight = () => (
-	<TouchableOpacity style={{marginRight:10}}>
+const HeaderRight = ({navigation}) => (
+	<TouchableOpacity 
+		style={{marginRight:10}}
+		onPress={() => navigation.navigate("Message")}
+	>
 		<Icon name="send"/>
 	</TouchableOpacity>
 )

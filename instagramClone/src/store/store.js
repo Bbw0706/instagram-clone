@@ -1,9 +1,11 @@
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import middlewares from "./middlewares.js"
 import feed from './reducers/feed.js'
+import message from './reducers/message.js'
 
 const RootReducer = combineReducers({
-	feed
+	feed,
+	message
 })
 
 const store = () => {

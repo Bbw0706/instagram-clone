@@ -5,10 +5,12 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from "../Home/index.js"
 import ProfileScreen from "../Profile/index.js"
 import FavouriteScreen from "../Favourite/index.js"
+import MessageScreen from "../Message/index.js"
 
 const HomeStack = createStackNavigator(
 	{
-		Home : HomeScreen
+		Home : HomeScreen,
+		Message : MessageScreen
 	},
 	{
     	initialRouteName: 'Home',
@@ -21,6 +23,17 @@ const HomeStack = createStackNavigator(
 	    },
 	}
 )
+
+HomeStack.navigationOptions = ({ navigation }) => {
+  let { routeName } = navigation.state.routes[navigation.state.index];
+  let navigationOptions = {};
+
+  if (routeName === 'Message') {
+    navigationOptions.tabBarVisible = false;
+  }
+
+  return navigationOptions;
+};
 
 const ProfileStack = createStackNavigator(
 	{
