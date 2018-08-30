@@ -3,6 +3,7 @@ import {
   Platform, 
   StyleSheet, 
   View, 
+  StatusBar,
   FlatList
 } from 'react-native';
 
@@ -59,6 +60,10 @@ class Home extends Component{
 
     return (
       <Container>
+        <StatusBar
+           backgroundColor="#eee"
+           barStyle="dark-content"
+        />
        <View>
           {isAnyFeed}
 
