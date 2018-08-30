@@ -6,11 +6,13 @@ import HomeScreen from "../Home/index.js"
 import ProfileScreen from "../Profile/index.js"
 import FavouriteScreen from "../Favourite/index.js"
 import MessageScreen from "../Message/index.js"
+import MessageDetailScreen from "../MessageDetail/index.js"
 
 const HomeStack = createStackNavigator(
 	{
 		Home : HomeScreen,
-		Message : MessageScreen
+		Message : MessageScreen,
+		MessageDetail : MessageDetailScreen
 	},
 	{
     	initialRouteName: 'Home',
@@ -29,6 +31,8 @@ HomeStack.navigationOptions = ({ navigation }) => {
   let navigationOptions = {};
 
   if (routeName === 'Message') {
+    navigationOptions.tabBarVisible = false;
+  } else if (routeName === 'MessageDetail') {
     navigationOptions.tabBarVisible = false;
   }
 

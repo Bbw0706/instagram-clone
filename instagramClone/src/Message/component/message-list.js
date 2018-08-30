@@ -8,8 +8,12 @@ import {
   Text 
 } from 'native-base';
 
-const MessageList = ({item}) => (
-  <ListItem avatar style={{marginRight:20}}>
+const MessageList = ({item, navigation}) => (
+  <ListItem 
+    avatar 
+    style={{marginRight:20}}
+    onPress={() => navigation.navigate("MessageDetail", {item})}
+  >
     <Left>
       <Thumbnail 
         small 

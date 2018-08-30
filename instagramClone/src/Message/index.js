@@ -52,7 +52,7 @@ class Message extends Component{
 			<List>
 				<FlatList 
 					data={messageList}
-		            renderItem={({item}) => <MessageList item={item}/>}
+		            renderItem={({item}) => <MessageList item={item} navigation={this.props.navigation}/>}
 		            keyExtractor={(item, index) => item.id.toString()}
 				/>
 			</List>
