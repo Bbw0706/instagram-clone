@@ -17,7 +17,7 @@ const MessageList = ({item, navigation}) => (
     <Left>
       <Thumbnail 
         small 
-        source={{uri: 'https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_960_720.png'}}
+        source={{uri: 'https://tracker.moodle.org/secure/attachment/30912/f3.png'}}
         style={{borderColor:"#ccc", borderWidth:2}}
       />
     </Left>

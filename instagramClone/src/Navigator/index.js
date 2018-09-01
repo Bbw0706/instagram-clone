@@ -4,9 +4,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from "../Home/index.js"
 import ProfileScreen from "../Profile/index.js"
-import FavouriteScreen from "../Favourite/index.js"
+import AddPostScreen from "../AddPost/index.js"
 import MessageScreen from "../Message/index.js"
 import MessageDetailScreen from "../MessageDetail/index.js"
+import ImageDetailScreen from "../ImageDetail/index.js"
 
 const HomeStack = createStackNavigator(
 	{
@@ -41,7 +42,8 @@ HomeStack.navigationOptions = ({ navigation }) => {
 
 const ProfileStack = createStackNavigator(
 	{
-		Profile : ProfileScreen
+		Profile : ProfileScreen,
+		ImageDetail : ImageDetailScreen
 	},
 	{
     	initialRouteName: 'Profile',
@@ -55,12 +57,12 @@ const ProfileStack = createStackNavigator(
 	}
 )
 
-const FavouriteStack = createStackNavigator(
+const AddPostStack = createStackNavigator(
 	{
-		Favourite : FavouriteScreen
+		AddPost : AddPostScreen
 	},
 	{
-    	initialRouteName: 'Favourite',
+    	initialRouteName: 'AddPost',
 	    /* The header config from HomeScreen is now here */
 	    navigationOptions: {
 	      headerStyle: {
@@ -75,7 +77,7 @@ const FavouriteStack = createStackNavigator(
 const RootStack = createBottomTabNavigator(
   {
     Home: HomeStack,
-    Favourite: FavouriteStack,
+    AddPost: AddPostStack,
     Profile: ProfileStack
   },
   {
@@ -85,8 +87,8 @@ const RootStack = createBottomTabNavigator(
         let iconName;
         if (routeName === 'Home') {
           iconName = `ios-home${focused ? '' : '-outline'}`;
-        } else if (routeName === 'Favourite') {
-          iconName = `ios-heart${focused ? '' : '-outline'}`;
+        } else if (routeName === 'AddPost') {
+          iconName = `ios-add-circle`;
         } else if (routeName === 'Profile') {
           iconName = `ios-contact${focused ? '' : '-outline'}`;
         }
